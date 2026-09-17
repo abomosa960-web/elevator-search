@@ -36,7 +36,7 @@
   </div>
   <h2>البحث عن حالة المصعد</h2>
   <div class="box">
-<input id="idInput" placeholder="رقم المصعد أو اسم المصعد" />
+    <input id="idInput" placeholder="رقم المصعد أو اسم المصعد" />
     <button onclick="doSearch()">بحث</button>
   </div>
   <div id="result"></div>
@@ -85,9 +85,14 @@ function render(r){
   html += fieldRow("حالة الضمان", r.warranty, true);
   html += fieldRow("الفني", r.technician);
   html += fieldRow("المندوب", r.agent);
+  html += fieldRow("رقم الجوال", r.phone);
   html += "</div></div>";
   el.innerHTML = html;
 }
+document.getElementById('idInput').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
+</script>
+</body>
+</html>
 document.getElementById('idInput').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
 </script>
 </body>
