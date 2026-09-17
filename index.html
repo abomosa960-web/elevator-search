@@ -92,7 +92,7 @@ function render(r){
   html += fieldRow("النوع", r.elevatorType);
   html += fieldRow("حالة الضمان", r.warranty, true);
   html += fieldRow("المندوب", displayAgent(r.agent));
-    html += fieldRow("الفني", r.technician);
+  html += fieldRow("الفني", r.technician);
   html += "</div></div>";
   el.innerHTML = html;
 }
