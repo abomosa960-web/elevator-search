@@ -55,6 +55,13 @@ function doSearch(){
       document.getElementById('result').innerHTML = "<div class='msg'>حصل خطأ في الاتصال، جرب تاني</div>";
     });
 }
+var AGENT_NAMES = {
+  "فوزي": "م. أحمد فوزي",
+  "احمد": "أحمد ناصر"
+};
+function displayAgent(name){
+  return AGENT_NAMES[name] || name;
+}
 function badge(text, ok){
   return "<span class='badge " + (ok ? 'ok' : 'bad') + "'>" + text + "</span>";
 }
@@ -77,6 +84,7 @@ function render(r){
   var html = "<div class='card'>" + banner + "<div class='card-body'>";
   html += "<div class='row'><span>الحالة</span>" + badge(r.status.label, r.status.ok) + "</div>";
   html += fieldRow("العميل", r.customer);
+  html += fieldRow("رقم الجوال", r.phone);
   html += fieldRow("الموقع", r.location);
   html += fieldRow("رقم العقد", r.contractNo);
   html += fieldRow("تاريخ الاستحقاق", r.dueDate);
@@ -84,8 +92,7 @@ function render(r){
   html += fieldRow("النوع", r.elevatorType);
   html += fieldRow("حالة الضمان", r.warranty, true);
   html += fieldRow("الفني", r.technician);
-  html += fieldRow("المندوب", r.agent);
-  html += fieldRow("رقم الجوال", r.phone);
+  html += fieldRow("المندوب", displayAgent(r.agent));
   html += "</div></div>";
   el.innerHTML = html;
 }
