@@ -88,6 +88,8 @@ function render(r){
   html += fieldRow("الموقع", r.location);
   html += fieldRow("رقم العقد", r.contractNo);
   html += fieldRow("تاريخ الاستحقاق", r.dueDate);
+  html += fieldRow("قيمة العقد", r.contractValue);
+  html += fieldRow("قسط ثاني / قيمة تجديد", r.statement);
   html += fieldRow("العنوان", r.address);
   html += fieldRow("النوع", r.elevatorType);
   html += fieldRow("حالة الضمان", r.warranty, true);
